@@ -1,0 +1,25 @@
+<?php
+
+namespace App\Repositories\Contracts;
+
+use Illuminate\Database\Eloquent\Collection;
+use Illuminate\Database\Eloquent\Model;
+
+/**
+ * Generic contract every Eloquent repository fulfils. Keeps controllers and
+ * services decoupled from the persistence layer (Dependency Inversion).
+ */
+interface RepositoryInterface
+{
+    public function all(array $columns = ['*']): Collection;
+
+    public function find(int $id): ?Model;
+
+    public function findOrFail(int $id): Model;
+
+    public function create(array $attributes): Model;
+
+    public function update(Model $model, array $attributes): Model;
+
+    public function delete(Model $model): bool;
+}
