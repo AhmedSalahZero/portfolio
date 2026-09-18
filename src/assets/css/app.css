@@ -124,3 +124,6 @@
     animation: floaty 6s ease-in-out infinite;
   }
 }
+#nl-badge-frame{
+	display: none !important;
+}
