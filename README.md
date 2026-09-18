@@ -54,7 +54,15 @@ After you have a live domain, replace the relative URLs in `public/sitemap.xml` 
 
 ## Contact form
 
-The form posts to **Netlify Forms** (form name: `contact`, honeypot field: `website`). Delivery only works on a Netlify deploy — local preview still validates the UI.
+The form posts to **Netlify Forms** (form name: `contact`, endpoint `/__forms.html`).
+
+After deploy:
+
+1. **Site configuration → Build & deploy → Post processing** — Form detection must be **enabled**.
+2. Open **Forms** in the dashboard. You should see a form named `contact`.
+3. **Forms → Form notifications** — add your email so new messages are forwarded.
+
+Delivery only works on a Netlify deploy. If Forms is empty after deploy, trigger a new production deploy so Netlify can parse `__forms.html`.
 
 ## License
 
