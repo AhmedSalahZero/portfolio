@@ -71,7 +71,7 @@ router.beforeEach(async (to) => {
 });
 
 router.afterEach((to) => {
-  const base = 'Portfolio';
+  const base = (import.meta.env.VITE_APP_NAME as string | undefined) || 'Portfolio';
   document.title = to.meta.title ? `${to.meta.title as string} · ${base}` : base;
 });
 

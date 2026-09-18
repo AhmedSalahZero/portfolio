@@ -20,6 +20,8 @@ async function load(slug: string): Promise<void> {
   notFound.value = false;
   try {
     project.value = await publicApi.project(slug);
+    const base = (import.meta.env.VITE_APP_NAME as string | undefined) || 'Portfolio';
+    document.title = `${project.value.title} · ${base}`;
   } catch {
     notFound.value = true;
   } finally {
@@ -114,7 +116,7 @@ const sections = [
         <section v-if="project.images.length" class="grid gap-4 sm:grid-cols-2">
           <figure v-for="img in project.images" :key="img.id" class="glass overflow-hidden rounded-xl">
             <img :src="img.url" :alt="img.caption || project.title" class="w-full object-cover" loading="lazy" />
-            <figcaption v-if="img.caption" class="p-3 text-xs text-slate-500">{{ img.caption }}</figcaption>
+            <figcaption v-if="img.caption" class="p-3 text-xs text-slate-400">{{ img.caption }}</figcaption>
           </figure>
         </section>
       </div>
@@ -124,7 +126,7 @@ const sections = [
           <h3 class="text-sm font-semibold uppercase tracking-wider text-accent-400">Impact</h3>
           <dl class="mt-4 grid grid-cols-2 gap-4">
             <div v-for="m in project.metrics" :key="m.label">
-              <dt class="text-xs text-slate-500">{{ m.label }}</dt>
+              <dt class="text-xs text-slate-400">{{ m.label }}</dt>
               <dd class="text-lg font-bold text-white">{{ m.value }}</dd>
             </div>
           </dl>

@@ -34,7 +34,7 @@ function period(exp: Experience): string {
                 {{ exp.role }}
               </h3>
               <p class="mt-0.5 text-sm text-accent-300">
-                {{ exp.company }}<span v-if="exp.location" class="text-slate-500"> · {{ exp.location }}</span>
+                {{ exp.company }}<span v-if="exp.location" class="text-slate-400"> · {{ exp.location }}</span>
               </p>
             </div>
             <span class="chip shrink-0 text-[11px]">{{ period(exp) }}</span>

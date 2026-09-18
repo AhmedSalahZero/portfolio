@@ -18,7 +18,8 @@ class SkillSeeder extends Seeder
                 ['Authentication & Sanctum', 88, false],
                 ['Queues & Background Jobs', 85, false],
                 ['Real-time / WebSockets', 82, false],
-                ['Node.js', 72, false],
+                ['Node.js (basic)', 45, false],
+                ['Python (basic)', 45, false],
             ],
             SkillCategory::Frontend->value => [
                 ['Vue 3', 90, true],
@@ -38,12 +39,13 @@ class SkillSeeder extends Seeder
             SkillCategory::DevOps->value => [
                 ['Docker', 80, true],
                 ['CI/CD Pipelines', 78, false],
+                ['AWS', 68, false],
+                ['Vagrant', 65, false],
                 ['Nginx', 76, false],
                 ['Linux', 82, false],
                 ['Git', 90, false],
             ],
             SkillCategory::Tools->value => [
-                ['Filament', 84, false],
                 ['PHPUnit / Pest', 82, true],
                 ['Firebase', 80, false],
                 ['Twilio', 78, false],

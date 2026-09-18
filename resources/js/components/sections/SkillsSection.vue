@@ -40,7 +40,7 @@ const grouped = computed(() => {
             <li v-for="skill in group.items" :key="skill.id">
               <div class="flex items-center justify-between text-sm">
                 <span class="font-medium text-slate-200">{{ skill.name }}</span>
-                <span class="text-xs text-slate-500">{{ skill.level }}%</span>
+                <span class="text-xs text-slate-400">{{ skill.level }}%</span>
               </div>
               <div class="mt-1.5 h-1.5 w-full overflow-hidden rounded-full bg-white/5">
                 <div

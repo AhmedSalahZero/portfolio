@@ -13,6 +13,14 @@ function scrollTo(hash: string): void {
   <section id="top" class="relative overflow-hidden pt-32 pb-20 sm:pt-40 sm:pb-28">
     <div class="container-page grid items-center gap-12 lg:grid-cols-[1.4fr_1fr]">
       <div>
+        <img
+          v-if="profile.avatar_url"
+          v-reveal
+          :src="profile.avatar_url"
+          :alt="profile.name"
+          class="mb-6 h-20 w-20 rounded-2xl object-cover ring-1 ring-white/10"
+        />
+
         <div v-reveal class="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1.5 text-xs text-slate-300">
           <span class="relative flex h-2 w-2">
             <span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-400 opacity-75" />

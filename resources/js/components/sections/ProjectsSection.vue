@@ -58,7 +58,7 @@ const filtered = computed(() => {
         <ProjectCard v-for="project in filtered" :key="project.id" :project="project" />
       </transition-group>
 
-      <p v-if="!filtered.length" class="mt-10 text-center text-slate-500">
+      <p v-if="!filtered.length" class="mt-10 text-center text-slate-400">
         No projects match this filter yet.
       </p>
     </div>

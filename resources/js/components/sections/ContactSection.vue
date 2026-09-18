@@ -56,10 +56,34 @@ async function submit(): Promise<void> {
               <AppIcon name="mail" :size="20" />
             </span>
             <div>
-              <p class="text-xs text-slate-500">Email</p>
+              <p class="text-xs text-slate-400">Email</p>
               <p class="text-sm font-medium text-white">{{ profile.email }}</p>
             </div>
           </a>
+
+          <a
+            v-if="profile.phone"
+            :href="`tel:${profile.phone.replace(/\s+/g, '')}`"
+            class="glass card-hover flex items-center gap-3 rounded-xl p-4"
+          >
+            <span class="grid h-10 w-10 place-items-center rounded-lg bg-accent-500/10 text-accent-400">
+              <AppIcon name="phone" :size="20" />
+            </span>
+            <div>
+              <p class="text-xs text-slate-400">Phone</p>
+              <p class="text-sm font-medium text-white">{{ profile.phone }}</p>
+            </div>
+          </a>
+
+          <div v-if="profile.location" class="glass flex items-center gap-3 rounded-xl p-4">
+            <span class="grid h-10 w-10 place-items-center rounded-lg bg-accent-500/10 text-accent-400">
+              <AppIcon name="location" :size="20" />
+            </span>
+            <div>
+              <p class="text-xs text-slate-400">Location</p>
+              <p class="text-sm font-medium text-white">{{ profile.location }}</p>
+            </div>
+          </div>
 
           <div class="flex gap-3">
             <a

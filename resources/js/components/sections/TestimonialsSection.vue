@@ -28,7 +28,7 @@ const props = defineProps<{ testimonials: Testimonial[] }>();
             </span>
             <div>
               <p class="text-sm font-semibold text-white">{{ item.author }}</p>
-              <p class="text-xs text-slate-500">
+              <p class="text-xs text-slate-400">
                 {{ [item.position, item.company].filter(Boolean).join(' · ') }}
               </p>
             </div>

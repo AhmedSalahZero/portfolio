@@ -6,6 +6,16 @@ import type { Directive } from 'vue';
  */
 export const vReveal: Directive<HTMLElement, number | undefined> = {
   mounted(el, binding) {
+    const prefersReducedMotion =
+      typeof window !== 'undefined' &&
+      window.matchMedia?.('(prefers-reduced-motion: reduce)').matches;
+
+    if (prefersReducedMotion) {
+      el.style.opacity = '1';
+      el.style.transform = 'none';
+      return;
+    }
+
     const delay = binding.value ?? 0;
     el.style.opacity = '0';
     el.style.transform = 'translateY(24px)';

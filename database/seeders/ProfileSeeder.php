@@ -32,7 +32,7 @@ class ProfileSeeder extends Seeder
                 'linkedin_url' => 'https://www.linkedin.com/in/ahmed-salah-a847841b5',
                 'twitter_url' => null,
                 'website_url' => null,
-                'cv_path' => null,
+                'cv_path' => 'cv/ahmed-salah-cv.pdf',
                 'stats' => [
                     ['label' => 'Years Experience', 'value' => '6+'],
                     ['label' => 'Production Projects', 'value' => '15+'],
